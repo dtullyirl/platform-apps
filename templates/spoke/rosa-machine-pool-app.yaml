@@ -2,7 +2,7 @@
 {{- $appConfig := ((.Values.platform).argocdApps).rosaMachinePool }}
 {{- $vars := dict -}}
 {{- include "default.variables" (dict "vars" $vars "appConfig" $appConfig "Values" .Values) }}
-{{- $repoURL        := default "https://github.com/nu-j/helm-catalog.git" $vars.repoURL -}}
+{{- $repoURL        := default "https://github.com/dtullyirl/helm-catalog.git" $vars.repoURL -}}
 {{- $path           := default "rosa-machine-pool" $vars.path -}}
 {{- $targetRevision := default "main" $vars.targetRevision -}}
 {{- $pool := ((.Values.rosa).machinePools).platform | default dict }}

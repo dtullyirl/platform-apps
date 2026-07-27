@@ -2,7 +2,7 @@
 {{- if and ($appConfig.enabled | default false) (ne .Values.clusterType "management") }}
 {{- $vars := dict -}}
 {{- include "default.variables" (dict "vars" $vars "appConfig" $appConfig "Values" .Values) }}
-{{- $repoURL        := default "https://github.com/nu-j/helm-catalog.git" $vars.repoURL -}}
+{{- $repoURL        := default "https://github.com/dtullyirl/helm-catalog.git" $vars.repoURL -}}
 {{- $targetRevision := default "main" $vars.targetRevision -}}
 {{- $np := (.Values.clusterGuardrails).networkPolicy | default dict }}
 {{- $pt := (.Values.clusterGuardrails).projectTemplate | default dict }}

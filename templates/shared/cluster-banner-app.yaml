@@ -2,7 +2,7 @@
 {{- $appConfig := ((.Values.platform).argocdApps).clusterBannerConfig }}
 {{- $vars := dict -}}
 {{- include "default.variables" (dict "vars" $vars "appConfig" $appConfig "Values" .Values) }}
-{{- $repoURL        := default "https://github.com/nu-j/helm-catalog.git" $vars.repoURL -}}
+{{- $repoURL        := default "https://github.com/dtullyirl/helm-catalog.git" $vars.repoURL -}}
 {{- $targetRevision := default "main" $vars.targetRevision -}}
 ---
 apiVersion: argoproj.io/v1alpha1

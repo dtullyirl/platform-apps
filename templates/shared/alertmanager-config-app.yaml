@@ -2,7 +2,7 @@
 {{- $appConfig := ((.Values.platform).argocdApps).alertmanagerConfig }}
 {{- $vars := dict -}}
 {{- include "default.variables" (dict "vars" $vars "appConfig" $appConfig "Values" .Values) }}
-{{- $repoURL        := default "https://github.com/nu-j/helm-catalog.git" $vars.repoURL -}}
+{{- $repoURL        := default "https://github.com/dtullyirl/helm-catalog.git" $vars.repoURL -}}
 {{- $path           := default "alertmanager" $vars.path -}}
 {{- $targetRevision := default "main" $vars.targetRevision -}}
 ---
@@ -25,7 +25,7 @@ spec:
   project: default
   info:
    - name: "Chart repo URL"
-     value: "https://github.com/nu-j/helm-catalog.git"
+     value: "https://github.com/dtullyirl/helm-catalog.git"
   sources:
     - helm:
         valueFiles:
@@ -40,7 +40,7 @@ spec:
       targetRevision: {{ $targetRevision }}
     - path: .
       ref: platform_values
-      repoURL: https://github.com/nu-j/platform-config.git
+      repoURL: https://github.com/dtullyirl/platform-config.git
       targetRevision: {{ $vars.platformVersion }}
 {{- if $vars.customSyncPolicy }}
   syncPolicy: {{ $vars.customSyncPolicy | toYaml | nindent 4 }}
